@@ -1,0 +1,75 @@
+.h1 {
+  font-size: 3.7em;
+  font-family: 'Oleo Script', cursive;
+}
+
+.card-title {
+  font-size: 33px;
+  line-height: 2;
+}
+
+.h4{
+  font-size: 2.25em;
+  font-family: 'Oleo Script', cursive;
+}
+
+h1 {
+  font-size: 3em;
+  font-family: 'Oleo Script', cursive;
+}
+
+h2 {
+  font-size: 43px;
+  font-family: 'Oleo Script', cursive;
+  text-decoration: underline;
+  color: #bd0000;
+}
+
+.modal-body {
+  font-size: 25px;
+}
+
+p1{
+  font-size: 1.5em;
+  font-family: Georgia, Times, serif;
+  font-weight: bold;
+  line-height: 2;
+}
+
+div.card {
+  box-shadow: 0 4px 8px 6px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="radio"]{
+  margin: 0 10px 0 10px;
+  transform: scale(1.5);
+}
+
+.btn-primary{
+  font-size: 17px;
+}
+
+.btn-info{
+  font-size: 20px;
+  color: white;
+}
+
+.form-control {
+  width: 18%!important;
+  font-size: 26px;
+  padding: 10px;
+  margin-bottom: 0;
+  border: 1px solid #ccc;
+  color: #555555;
+  border-radius: 5px;
+}
+
+.col-sm-8 {
+ -webkit-text-size-adjust: 81%;
+}
+
+.gallery a{
+  font-size: 40px;
+  color:#bd5700;
+  font-family: 'Oleo Script', cursive;
+}
