@@ -1,0 +1,97 @@
+.header{
+    font-size: 24px;
+    border-color: white;
+}
+
+.table-dark{
+    color: white;
+    font-size: 23px;
+    font-weight: bold;
+    background-color: rgb(46, 46, 46);
+}
+
+.wrapper{
+    padding: 1%;
+    width: 87%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+.dataTables_filter {
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+.dataTables_length{
+    font-size: 20px;
+}
+
+.dataTables_filter input {
+    height: 34px;
+}
+
+.dataTables_info{
+    margin-top: 35px;
+    font-size: 20px;
+}
+
+.dataTables_paginate{
+    margin-top: 35px;
+    font-size: 19px;
+}
+
+.btn-back{
+    background-color: black;
+    padding: 1%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size : 18px;
+    margin: .25em;
+    border-radius: 4.5px;
+}
+
+.btn-back:hover{
+    background-color: #727070;
+    color: white;
+}
+
+table.dataTable.row-border tbody th,
+table.dataTable.row-border tbody td,
+table.dataTable.display tbody th,
+table.dataTable.display tbody td {
+  border-top: 2.5px solid rgb(124, 122, 122)!important;
+  border-left: 2px solid rgb(124, 122, 122)!important;
+  border-right: 1px solid rgb(124, 122, 122)!important;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 2px solid rgb(124, 122, 122)!important;
+  }
+
+  .btn-more{
+    color: white;
+    background-color: #007bff;
+    padding: 3%;
+    text-decoration: none;
+    font-weight: bold;
+    font-size : 18px;
+    margin: .25em;
+    border-radius: 4.5px;
+  }
+
+  h2{
+    font-size: 2.5em;
+    font-family: Georgia, Times, serif;
+    border-bottom: 2px solid rgb(192, 191, 191);
+}
+
+.info{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.error{
+    font-size: 26px;
+    font-weight: bold;
+}
