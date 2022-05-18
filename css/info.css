@@ -1,0 +1,148 @@
+.wrapper{
+    padding: 1%;
+    width: 83%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+.btn-primary{
+  font-weight: 550;
+  padding: .75%;
+  padding-right: 1.5%;
+  padding-left: 1.5%;
+  font-size: 20px;
+}
+
+h1{
+  font-size: 2.9em;
+  color: #222;
+}
+
+h2{
+  font-size: 37px;
+  font-family: Georgia, Times, serif;
+  border-bottom: 2px solid rgb(192, 191, 191);
+  line-height: 2;
+}
+
+h4{
+  font-size: 30px;
+}
+
+h6{
+  font-size: 27px;
+}
+
+h3{
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 2em;
+}
+
+h5 {
+ font-size: 35px;
+}
+
+p{
+  font-size: 28px;
+  font-weight: 600;
+  color: black;
+  line-height: 1.2em;
+}
+
+p2{
+  font-size: 30px;
+  font-weight: 600;
+  color: black;
+  line-height: 1.2em;
+  right: 40px;
+}
+
+#top, #mid,#bot{ /* Targets all id with 'col-' */
+  border-bottom: 3px solid #EEE;
+}
+
+#top{min-height: 100px;}
+#mid{min-height: 80px;}
+#bot{ min-height: 50px;}
+
+.Info p{
+  display: block;
+  margin-left: 0;
+  line-height: 2;
+}
+
+table{
+  width: 100%;
+}
+
+.heading{
+  font-size: 16px;
+  color: white;
+  background-color:black!important;
+}
+
+.item{
+  width: 45%;
+}
+
+.Qty{
+  width: 10%;
+}
+
+.hours{
+  width:15%;
+  text-align: center;
+}
+
+.Rate{
+  text-align: center;
+  border-bottom: 3px solid #EEE;
+}
+
+.itemtext{
+  font-size: 25px;
+  text-align: center;
+}
+
+.items{
+  font-size: 25px;
+}
+
+.qty{
+  font-size: 25px;
+  margin-left: 7px;
+}
+
+.payment{
+  text-align: center;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.price{
+  font-size: 25px;
+  text-align: center;
+}
+
+.empty{
+  background-color: white;
+}
+
+.grey{
+  background-color: rgb(235, 235, 235);
+}
+
+.error{
+  font-size: 25px;
+}
+
+.btn-back:hover{
+  background-color: #727070;
+  color: white;
+}
+
+@media print {
+  body {
+   zoom: 72%;
+ }
+}
