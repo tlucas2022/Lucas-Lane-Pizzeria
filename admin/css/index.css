@@ -1,0 +1,217 @@
+ .wrapper{
+    padding: 1%;
+    width: 86%;
+    margin: 0 auto;
+    background-color: #fdf9f7;
+    border-radius: 7px;
+}
+
+  .page-header{
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        border-bottom: 2px solid rgb(192, 191, 191);
+        font-size: 35px;
+        font-weight: bold;
+  }
+
+  .page-subheader{
+    padding-bottom: 9px;
+    margin: 40px 50px 0 20px;
+    border-bottom: 2px solid rgb(192, 191, 191);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+  @media (min-width: 768px) {
+    .page-wrapper {
+      position: inherit;
+      margin: 0 0 0 250px;
+      padding: 0 30px;
+    }
+  }
+
+  mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.bg-success{
+  background-color: #25a543!important;
+}
+
+.bg-warning{
+  background-color: #f0ad4e!important;
+}
+
+.bg-purple{
+  background-color: #4046b9!important;
+}
+
+.card {
+  margin-bottom: 20px;
+  margin-left: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.card-header {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.card-footer {
+  padding: 10px 15px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+div {
+  display: block;
+}
+
+.complete{
+  text-decoration: none;
+  color: #25a543;
+  font-weight: bold;
+}
+
+.complete:hover{
+  color: #25a543;
+}
+
+.active{
+  text-decoration: none;
+  color: #f39c38;
+  font-weight: bold;
+}
+
+.active:hover{
+  color: #f80;
+}
+
+.completed-icon{
+  font-size: 80px;
+  color: white;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 65px;
+  top: 30px;
+}
+
+.active-icon{
+  font-size: 88px;
+  color: white;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 85px;
+  top: 30px;
+}
+
+.active-orders{
+  font-size: 50px;
+  color: white;
+}
+
+.orders{
+  font-size: 44px;
+  color: white;
+}
+
+.completed{
+  font-size: 37px;
+  color: white;
+}
+
+.active-text{
+  font-size: 40px;
+  color: white;
+}
+
+.money {
+  font-size: 50px;
+  color: white;
+}
+
+.revenue{
+  font-size: 43px;
+  color: white;
+}
+
+.left{
+  float:left;
+}
+
+.left-text{
+  font-size: 26px;
+  float:left;
+}
+
+.right-text{
+  font-size: 26px;
+  float:left;
+}
+
+.right{
+  float:right;
+}
+
+.col-md-3 {
+  width: 69%;
+  margin-right: 1rem !important;
+}
+
+.col-md-3-rev {
+  width: 40%;
+  margin-right: 1rem !important;
+}
+
+.col-md-3-money {
+  width: 45%;
+  margin-right: 1rem !important;
+}
+
+.col-sm-6 {
+  width: 45%;
+  margin-right: 1rem !important;
+}
+
+.col-md-6 {
+  width: 42%;
+  margin-left: 3%;
+}
+
+.col-lg-5 {
+  width: 60%;
+  margin-left: 17.5%;
+}
+
+.col-md-5{
+  width: 50%;
+}
+
+.revenue-icon{
+  font-size: 120px;
+  color: white;
+  padding: 10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 1.4em;
+  top: 10px;
+}
+
+#piechart {
+  margin-left: 30%;
+}
