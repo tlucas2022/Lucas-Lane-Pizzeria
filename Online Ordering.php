@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"><!-- importing google fonts to use Oleo Script font -->
 
     <link href= "css/navbar.css" rel="stylesheet"><!-- import CSS file for navigation bar -->
-    <link href= "css/olo.css" rel="stylesheet"><!-- import CSS file for Onlibe Ordering page -->
+    <link href= "css/olo.css" rel="stylesheet"><!-- import CSS file for Online Ordering page -->
     <link href= "css/topnav.css" rel="stylesheet"><!-- import CSS file for top navigation bar -->
 
 <style>
