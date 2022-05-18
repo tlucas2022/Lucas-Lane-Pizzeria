@@ -35,9 +35,9 @@ body {
     <h4>The Best Italian Food In NYC</h4>
   </div>
 
-  <?php include("partial/navbar.php"); ?> // uses navigation bar
+  <?php include("partial/navbar.php"); ?> <!-- uses navigation bar -->
 
-  <pre> //spacing
+  <pre> <!-- spacing -->
 
 
   </pre>
