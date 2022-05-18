@@ -1,0 +1,86 @@
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+
+  }
+
+  .fade-in-text {
+    display: inline-block;
+    font-size: 2.14em;
+    font-family: 'Oleo Script', cursive;
+    color: red;
+    text-align: center;
+    animation: fadeIn linear 1.5s;
+    -webkit-animation: fadeIn linear 1.5s;
+    -moz-animation: fadeIn linear 1.5s;
+    -o-animation: fadeIn linear 1.5s;
+    -ms-animation: fadeIn linear 1.5s;
+      }
+
+  h2 {
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'Oleo Script', cursive;
+    color: black;
+    font-size: 2.14em;
+    font-size: 1.0em;
+    font-weight: bold;
+  }
+
+.desc{ /*  description text  */
+    font-family: 'Oleo Script', cursive;
+    color: red;
+    font-weight: bold;
+    font-size:33px;
+  }
+
+  @keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 3.7em;
+    font-family: 'Oleo Script', cursive;
+  }
+
+  h4{
+    font-size: 2.2em;
+     font-family: 'Oleo Script', cursive;
+  }
+
+  img{
+    border-radius: 50%;
+  }
