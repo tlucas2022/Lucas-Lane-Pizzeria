@@ -1,16 +1,5 @@
 <?php
-    //Query to select admin profiles
-    $sql = "SELECT * FROM ll_admin";
-
-    //Execute
-    $res = mysqli_query($conn, $sql);
-
-    //Count Rows
-    $count = mysqli_num_rows($res);
-
-    //If there are any results, check session
-    if($count>0) {
-
+   
       //Authorize admin profile Check if user is logged in or not
       if(!isset($_SESSION['user'])) {
 
@@ -24,5 +13,4 @@
       else {}
       //Login
 
-    }
 ?>
