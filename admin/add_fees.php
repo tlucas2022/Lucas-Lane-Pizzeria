@@ -30,15 +30,7 @@
 
 	<div class="main-content">
 		<div class="wrapper">
-			<h1>Add Order Fees</h1>
-
-			<?php
-                    if(isset($_SESSION['addfees']))
-                    {
-                        echo $_SESSION['addfees'];
-                        unset($_SESSION['addfees']);
-                    }
-                ?>
+			<h1>Add Order Fees</h1>                 
 
 			<br>
 
