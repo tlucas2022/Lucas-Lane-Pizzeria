@@ -112,6 +112,6 @@
     ?>
 	
     </div>
-	</div>
+	</div> 
 	
   <?php include('partials/admin_footer.php'); ?> <!-- use footer -->
