@@ -1,38 +1,33 @@
-<?php 
-    //Include Constants File
-    include('partials/admin_constants.php');
+<?php
 
-    //echo "Delete Page";
+//Include Constants File
+include('partials/admin_constants.php');
 
-        //Get the Value and Delete
-        //echo "Get Value and Delete";
-        $id = $_GET['id'];
+//Get the id and Delete
+$id = $_GET['id'];
+        
+//Delete Data from Database
+$sql = "DELETE FROM fees WHERE id=$id";
+      
+//Execute the Query
+$res = mysqli_query($conn, $sql);
 
+//Check if the data has been deleted from database 
+if($res==true)
+{
+    //Set Success Message 
+    $_SESSION['delete'] = "<div class='success'>Fees Deleted Successfully.</div>";
 
-        //Delete Data from Database
-        //SQL Query to Delete Data from Database
-        $sql = "DELETE FROM fees WHERE id=$id";
+    //Redirect to Manage Fees  
+    header('location:manage_fees.php');
+}
+else
+{
+    //Set Fail Message 
+    $_SESSION['delete'] = "<div class='error'>Failed to Delete Fees.</div>";
 
-        //Execute the Query
-        $res = mysqli_query($conn, $sql);
+    //Redirect to Manage Fees
+    header('location:manage_fees.php');       
+}
 
-        //Check whether the data is delete from database or not
-        if($res==true)
-        {
-            //SEt Success MEssage and REdirect
-            $_SESSION['delete'] = "<div class='success'>Fees Deleted Successfully.</div>";
-            //Redirect to Manage Food
-            header('location:admin/manage_fees.php');
-        }
-        else
-        {
-            //SEt Fail MEssage and Redirecs
-            $_SESSION['delete'] = "<div class='error'>Failed to Delete Fees.</div>";
-            //Redirect to Manage Food
-            header('location:admin/manage_fees.php');
-        }
-
- 
-
-  
 ?>
