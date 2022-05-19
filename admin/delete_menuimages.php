@@ -28,7 +28,7 @@ if($res==true)
         
  else
  {
-     //Failed to Delete Food
+     //Failed to Delete Image
      $_SESSION['delete'] = "<div class='error'>Menu Image Not Deleted.</div>";\
     
     //Redirect to Manage Menu Images     
