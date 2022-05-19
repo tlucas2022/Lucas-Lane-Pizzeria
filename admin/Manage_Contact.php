@@ -78,7 +78,11 @@
                         
         if($res==TRUE)
         {
+          //Count Rows        
           $count = mysqli_num_rows($res);
+        
+          //Create Serial Number Variable and assign value as 1  
+          $num=1;
                  
           if($count>0)
           {
