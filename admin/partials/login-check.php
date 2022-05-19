@@ -10,7 +10,4 @@
         header('location:login.php');
       }
 
-      else {}
-      //Login
-
-?>
+     ?>
