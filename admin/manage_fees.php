@@ -32,16 +32,10 @@
 			<br /><br />
 			<?php 
         
-            if(isset($_SESSION['add']))
+            if(isset($_SESSION['addfees']))
             {
-                echo $_SESSION['add'];
-                unset($_SESSION['add']);
-            }
-
-            if(isset($_SESSION['remove']))
-            {
-                echo $_SESSION['remove'];
-                unset($_SESSION['remove']);
+                echo $_SESSION['addfees'];
+                unset($_SESSION['addfees']);
             }
 
             if(isset($_SESSION['delete']))
@@ -54,12 +48,6 @@
             {
                 echo $_SESSION['update'];
                 unset($_SESSION['update']);
-            }
-
-            if(isset($_SESSION['upload']))
-            {
-                echo $_SESSION['upload'];
-                unset($_SESSION['upload']);
             }
 
             if(isset($_SESSION['failed-remove']))
