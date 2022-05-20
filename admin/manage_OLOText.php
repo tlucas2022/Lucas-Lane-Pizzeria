@@ -49,6 +49,11 @@
                 unset($_SESSION['update']);
             }          
 
+	    if(isset($_SESSION['no-info-found']))
+            {
+                echo $_SESSION['no-info-found'];
+                unset($_SESSION['no-info-found']);
+            }  
         ?>
 			<br><br>
 
