@@ -90,23 +90,41 @@
   
 <body>
 
-    <?php include("partial/topnav.php"); ?> <!-- uses top navigation bar -->
+  
 
       <div class="container-fluid p-5 bg-danger text-white text-center">
           <h class = "h1">Lucas Lane Pizzeria</h><p></p>
           <h class = "h4">New York City's Finest Pizza!</h>
       </div>
 
-     <?php include("partial/navbar.php"); ?> // uses navigation bar 
-
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+       <a class="nav-link" href="index.html">HOME</a>
+    </li>
+   
+    <li class="nav-item">
+      <a class="nav-link" href="Menu.html">MENU</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="About.html">ABOUT</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Online Ordering.html">ONLINE ORDERING</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Contact.html">CONTACT US</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+<p>  </p>
      <div class="wrapper">
-       <?php
-         if(isset($_SESSION['track']))
-         {
-             echo $_SESSION['track'];
-             unset($_SESSION['track']);
-         }
-       ?>
+      
 
        <!-- Tracker Form -->
        <form action="" method="POST" class="text">
@@ -125,34 +143,7 @@
 
        </form>
 
-       <?php
-
-          //If form is submitted
-          if(isset($_POST['submit']))
-          {
-            //1. Get Order details
-            $date = $_POST['date'];
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-
-            //2. Query to find with matching information
-            $sql = "SELECT o.id, o.type, o.status, c.cust_name FROM ll_orders o, ll_customer c WHERE o.cust_id = c.cust_id AND o.order_date ='$date' AND c.cust_name = '$name' AND c.cust_email = '$email' ";
-
-            //3. Execute
-            $res = mysqli_query($conn, $sql);
-
-            //4. Count rows
-            $count = mysqli_num_rows($res);
-
-            //If there are any results, retrieve values
-            if($count>0)
-            {
-              $row = mysqli_fetch_assoc($res);
-
-              $id = $row['id'];
-              $type = $row['type'];
-              $status = $row['status'];
-       ?>
+       
 
       <!-- Order Tracker -->
        <div class="container padding-bottom-3x mb-1">
@@ -177,29 +168,18 @@
              </div><br>
 
              <div class="link">
-                <a href="orderinfo.php?id=<?php echo $id;?>" target="_blank" rel="noopener noreferrer" class="btn btn-info float-center">
+                <a href="orderinfo.html?id=<?php echo $id;?>" target="_blank" rel="noopener noreferrer" class="btn btn-info float-center">
                   View Order Info</a> <!-- Link to order information -->
              </div>
            </div>
          </div>
        </div>
 
-     <?php
-           }    
-           else
-           {
-              $_SESSION['track'] = "<div class='error text-center text-danger'>No Order Found!</div>";
-              //Redirect to Order Tracker page
-              header('location:order_tracker.php');
-           }
-       }
-
-    ?>
+   
     <br><br><pre></pre>
 
   </div>
 
-  <?php include('partial/user_footer.php'); ?> <!-- Use footer -->
   
 </body>
 
