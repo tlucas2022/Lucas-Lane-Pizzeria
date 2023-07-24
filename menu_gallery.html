@@ -125,50 +125,15 @@ justify-content: center;
 
 <body>
 
-   <?php include("partial/topnav.php"); ?>
-
     <div class="container-fluid p-5 bg-danger text-white text-center">
       <h1>Menu Gallery</h1><p></p>
     </div>
-
-    <?php include("partial/navbar.php"); ?>
   
     <div style="text-align:center">
        <h3>Click on the Images Below:</h3><br>
     </div>
 
     <div class="row">
-      <?php
-        //Query to get all menu item photos
-        $sql = "SELECT product_name, photo FROM ll_food WHERE photo!=''";
-
-        //Execute
-        $res = mysqli_query($conn, $sql);
-
-        //Count Rows 
-        $count = mysqli_num_rows($res);
-
-        if($count>0)
-        {
-          //If there are results, retrieve them 
-          while($row=mysqli_fetch_assoc($res))
-          {
-            //get the values from individual columns
-            $names = $row['product_name'];
-            $images = $row['photo'];
-      ?>
-
-      <div class="column">
-         <img <?php echo "src='Images/".$images."'";?> alt="<?php echo $names;?>" style="width:90%; height:65%; border-radius: 10%;" onclick="myFunction(this);">
-      </div>
-
-      <?php
-        }
-      }
-
-      else
-      {}
-      ?>
 
   </div>
 
@@ -177,8 +142,6 @@ justify-content: center;
       <img id="expandedImg" style="width:70%; display:block; margin-left:auto; margin-right:auto">
         <div id="imgtext"></div>
   </div>
-
-  <?php include('partial/user_footer.php'); ?>
 
  <script>
    
