@@ -8,12 +8,12 @@
 
   <!-- Centered link -->
   <div class="topnav-centered">
-    <a href="order_tracker.php" class="active">Order Tracker</a>
+    <a href="order_tracker.html" class="active">Order Tracker</a>
   </div>
 
   <!-- Right-aligned links -->
   <div class="topnav-right">
-    <a href="cart.php">
+    <a href="cart.html">
       <span id="cart-item" class="position-absolute top-50 start-95 translate-middle badge rounded-pill"></span><i class="fa fa-shopping-cart"></i></span></a>
   </div>
 
@@ -29,7 +29,7 @@
 
   function load_cart_item_number() {
      $.ajax({
-        url: 'action.php',
+        url: 'action.html',
         method: 'get',
         data: {
           cartItem: "cart_item"
