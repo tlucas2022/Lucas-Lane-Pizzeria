@@ -71,28 +71,86 @@
 </head>
 
 <body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- import font awesome icons -->
+<link href= "css/topnav.css" rel="stylesheet"> <!-- import CSS file for top navigation bar -->
 
-<?php include("partial/topnav.php"); ?> <!-- uses top navigation bar -->
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="order_tracker.html" class="active">Order Tracker</a>
+  </div>
+
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="cart.html">
+      <span id="cart-item" class="position-absolute top-50 start-95 translate-middle badge rounded-pill"></span><i class="fa fa-shopping-cart"></i></span></a>
+  </div>
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+<script type="text/javascript">
+
+  // Load total # of items added in the cart and display in the top navbar
+  load_cart_item_number();
+
+  function load_cart_item_number() {
+     $.ajax({
+        url: 'action.html',
+        method: 'get',
+        data: {
+          cartItem: "cart_item"
+        },
+        success: function(response) {
+          $("#cart-item").html(response);
+        }
+    });
+ }
+
+  </script>
+
+
 
   <div class="container-fluid p-5 bg-danger text-white text-center">
       <h class = "h1">Lucas Lane Pizzeria</h><p></p>
       <h class = "h4">New York City's Finest Pizza!</h>
   </div>
 
-  <?php include("partial/navbar.php"); ?> <!-- uses navigation bar -->
+   <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+       <a class="nav-link" href="index.html">HOME</a>
+    </li>
+   
+    <li class="nav-item">
+      <a class="nav-link" href="Menu.html">MENU</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="About.html">ABOUT</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Online Ordering.html">ONLINE ORDERING</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Contact.html">CONTACT US</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+<p>  </p>
 
   <div class="wrapper">
   
-    <?php
-    <!-- Diplay error message if track session is not successful -->
-      if(isset($_SESSION['track']))
-      {
-          echo $_SESSION['track'];
-          unset($_SESSION['track']);
-      }
-    ?>
-
-    <h3 class ="text-center"><a href="Order_Finder.php">CLICK HERE TO RETRIEVE ORDER NUMBER</a></h3>
+ 
+    <h3 class ="text-center"><a href="Order_Finder.html">CLICK HERE TO RETRIEVE ORDER NUMBER</a></h3>
 
     <!-- Tracker Form Starts Here -->
     <form action="" method="POST" class="text">
@@ -107,30 +165,6 @@
     </form>
     <!-- Form Ends Here -->
 
-    <?php
-
-    if(isset($_POST['submit']))
-    {
-        //1. Get the Order #
-        $id = $_POST['id'];
-
-        //2. Query to look for order with id
-        $sql = "SELECT * FROM ll_orders WHERE id='$id'";
-
-        //3. Execute the Query
-        $res = mysqli_query($conn, $sql);
-
-        //4. Count rows
-        $count = mysqli_num_rows($res);
-
-        if($count==1)
-        {
-          //Get all the data
-          $row = mysqli_fetch_assoc($res);
-
-          $type = $row['type'];
-          $status = $row['status'];
-    ?>
 
     <div class="container padding-bottom-3x mb-1">
       <div class="card mb-3">
@@ -147,35 +181,41 @@
         <div class="card-body">
           <div class="steps d-flex flex-wrap flex-sm-nowrap justify-content-between padding-top-2x padding-bottom-1x">
 
-             <?php include("tracker.php"); ?> <!-- uses tracker -->
+            
 
           </div><br>
 
           <div class="link">
-            <a href="orderinfo.php?id=<?php echo $id;?>" target="_blank" rel="noopener noreferrer" class="btn btn-info float-center">
+            <a href="orderinfo.html?id=<?php echo $id;?>" target="_blank" rel="noopener noreferrer" class="btn btn-info float-center">
              View Order Info</a>
           </div>
         </div>
       </div>
     </div>
 
-    <?php
-      }
-      else
-      {
-           $_SESSION['track'] = "<div class='error text-center text-danger'>No Order Found!</div>";
-           //REdirect to HOme Page/Dashboard
-           header('location:order_tracker.php');
-      }
-    }
-
-    ?>
+    
    
     <br><br><pre></pre>
 
   </div>
   
-  <?php include('partial/user_footer.php'); ?> <!-- uses footer -->
+ <style>
+  
+.mt-4 {
+   position: relative;
+   font-size: 18px;
+   font-weight:550;
+}
+  
+</style>
+
+<br><br><br><br><br><br>
+
+      <div class="mt-4 p-2 bg-dark text-white text-center">
+        <p></p>
+        <p style="font-size:19px; font-weight:500;"><p>&copy; $year, All rights reserved, Lucas Lane Enterprises. Developed By - T. Lucas</p>
+       </div>
+       
   
   </body>
 
