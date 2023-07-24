@@ -78,91 +78,45 @@ h4{
 
 <body>
 
-<?php include("partial/topnav.php"); ?> <!-- uses top navigation bar -->
+
 
 <div class="container-fluid p-5 bg-danger text-white text-center">
   <h1>Contact Us</h1><p></p>
   <h4>Give Us a Call or Email!!!</h4>
 </div>
 
-<?php include("partial/navbar.php"); ?> <!-- uses navigation bar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+       <a class="nav-link" href="index.html">HOME</a>
+    </li>
+   
+    <li class="nav-item">
+      <a class="nav-link" href="Menu.html">MENU</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="About.html">ABOUT</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Online Ordering.html">ONLINE ORDERING</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Contact.html">CONTACT US</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+<p> Under Construction </p>
 
   
  <pre>
 
  </pre>
 
-
-<div class="wrapper">
- <div class="row">
-  <div class="row text-center">
-
-    <div class="col-md-3 column-margin">
-       <i class="fa fa-map-marker" style='font-size:48px;color:red'></i>
-       <p></p>
-
-       <?php
-
-        //Query to get all contact page content         
-        $sql = "SELECT * FROM ll_contact";
-        $res = mysqli_query($conn, $sql); //excute        
-
-        $count = mysqli_num_rows($res);
-
-        // If there are results, retrieve them      
-        if($count>0)
-        {
-           $rows=mysqli_fetch_assoc($res);
-           $id = $rows['id'];
-           $address = $rows['rest_address'];
-           $phone = $rows['phone'];
-           $email = $rows['email'];
-           $social = $rows['social'];
-           $map = $rows['map'];
-      ?>
-
-      <p class="p1"><?php echo $address; ?></p>
-    </div>
-
-    <div class="col-md-3 column-margin">
-      <i class="fa fa-phone" style='font-size:48px;color:red'></i>
-      <p></p>
-      <a href="tel:<?php echo $phone; ?>" style="font-size:35px;color:black;font-weight:bold;"><?php echo $phone; ?></a>
-    </div>
-
-    <div class="col-md-3 column-margin">
-      <i class="fa fa-envelope" style='font-size:48px;color:red'></i>
-      <p></p> <a href="mailto:<?php echo $email; ?>" style="font-size:35px;color:black;font-weight:bold;"><?php echo $email; ?></a>
-    </div>
-
-    <div class="col-md-3 column-margin">
-      <i class="fa fa-instagram" style='font-size:48px;color:red'></i>
-      <p></p> <a href="<?php echo $social; ?>" target="_blank" rel="noopener noreferrer"
-         style="font-size:35px;color:black;font-weight:bold;">Follow us on social media!!</a>
-    </div>
-
-  </div>
- </div>
-
- <br><br><br>
-
- <!--Google map-->
- <div class="container-fluid">
-   <div class="map-responsive">
-    <iframe src="<?php echo $map; ?>" width="700" height="389" frameborder="0" style="border: 0" allowfullscreen=""></iframe>
-
-    <?php
-     }
-
-     else{}
-    ?>
-
-   </div>
- </div>
-</div>
-</div>
-
-<?php include('partial/user_footer.php'); ?> <!-- use footer -->
   
 </body>
 
