@@ -69,16 +69,39 @@
 
 <body>
 
- <?php include("partial/topnav.php"); ?>
- <!-- uses top navigation bar -->
+
 
  <div class="container-fluid p-5 bg-danger text-white text-center">
    <h class = "h1">Lucas Lane Pizzeria</h><p></p>
    <h class = "h4">New York City's Finest Pizza!</h>
  </div>
 
- <?php include("partial/navbar.php"); ?>
- <!-- uses navigation bar -->
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+       <a class="nav-link" href="index.html">HOME</a>
+    </li>
+   
+    <li class="nav-item">
+      <a class="nav-link" href="Menu.html">MENU</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="About.html">ABOUT</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Online Ordering.html">ONLINE ORDERING</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Contact.html">CONTACT US</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+<p>  </p>
 
  <div class="container mt-3">
    <h1>Online Ordering</h1>
@@ -86,106 +109,29 @@
 
    <div id="message"></div> <!-- Diplay message of successful/unsuccessful addition to cart -->
 
-  <?php
-
-   //Query Online Ordering information
-   $sql = "SELECT * FROM ll_olo";
-
-      //Execute Query
-      $res = mysqli_query($conn, $sql);
-
-      //Count Rows
-      $count = mysqli_num_rows($res);
-
-      //If there are any results, retrieve values
-      if($count>0)
-      {
-        while($row=mysqli_fetch_assoc($res))
-        {
-          $id = $row['id'];
-          $text = $row['description'];
-
-  ?>
+ 
 
    <div class="row">
      <div class="col-sm-8">
         <p1>
-          <?php echo $text; ?><!-- Display Online Orderimg text -->
+          Display Online Orderimg text
         </p1>
 
-  <?php
-       }
-     }
-
-     else{}
-  ?>
        
     </div>
   </div>
       
   <br><br>
 
-  <div class="gallery"><a href="menu_gallery.php">Menu Gallery</a></div> <!-- Link to menu item photo gallery -->
+  <div class="gallery"><a href="menu_gallery.html">Menu Gallery</a></div> <!-- Link to menu item photo gallery -->
 
   <br><br>
-
-  <?php
-
-    //Query active categories 
-    $sql = "SELECT * FROM ll_category WHERE active='Yes'";
-
-      //Execute Query
-      $res = mysqli_query($conn, $sql);
-
-      //Count Rows
-      $count = mysqli_num_rows($res);
-
-      //If there are any results, retrieve values
-      if($count>0)
-      {
-        while($row=mysqli_fetch_assoc($res))
-        {
-          $id = $row['id'];
-          $category = $row['category'];
-          $active = $row['active'];
-
- ?>
-   
-      <h2><?php echo $category; ?></h2> <!-- Display all active catgeories  -->
-      
       <br>
 
- <?php
  
-      //Query active food items
-      $sql1 = "SELECT * FROM ll_food WHERE active='Yes' AND category_id=$id";
-
-        //Execute Query
-        $res1 = mysqli_query($conn, $sql1);
-
-        //Count Rows
-        $count1 = mysqli_num_rows($res1);
-
-        //If there are any results, retrieve values
-        if($count1>0)
-        {
-?>
-     
    <div class="row">
 
-<?php
-     
-    while($row=mysqli_fetch_assoc($res1))
-    {
-       $fid = $row['id'];
-       $food = $row['product_name'];
-       $description = $row['product_desc'];
-       $size = $row['product_size'];
-       $price = $row['product_price'];
-       $active = $row['active'];
-       $qty = $row['product_qty'];
-       $code = $row['product_code'];
-?>
+
 
        <div class="col-sm-4">
          
@@ -262,25 +208,16 @@
 </pre>
 
 <br><br><br><br><br><br>
-<?=template_footer()?>
 
-<?php
-// Template footer
-function template_footer() {
-$year = date('Y');
-echo <<<EOT
+
+
 
 <div class="mt-4 p-2 bg-dark text-white text-center">
 <p></p>
 <p style="font-size:19px; font-weight:500;"><p>&copy; $year, All rights reserved, Lucas Lane Enterprises. Developed By - T. Lucas</p>
  </div>
 
-<script src="script.js"></script>
-EOT;
-}
 
-   session_destroy();
-?>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
