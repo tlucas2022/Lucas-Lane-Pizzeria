@@ -28,14 +28,39 @@ body {
   
 <body>
 
-  <?php include("partial/topnav.html"); ?> <!-- uses top navigation bar -->
+ 
 
   <div class="container-fluid p-5 bg-danger text-white text-center">
     <h1>About Us</h1><p></p>
     <h4>The Best Italian Food In NYC</h4>
   </div>
 
-  <?php include("partial/navbar.html"); ?> <!-- uses navigation bar -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+       <a class="nav-link" href="index.html">HOME</a>
+    </li>
+   
+    <li class="nav-item">
+      <a class="nav-link" href="Menu.html">MENU</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="About.html">ABOUT</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Online Ordering.html">ONLINE ORDERING</a>
+    </li>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="Contact.html">CONTACT US</a>
+    </li>
+    
+  </ul>
+</nav>
+    
+<p>  </p>
 
   <pre> <!-- spacing -->
 
@@ -45,44 +70,20 @@ body {
   <div class="container mt-5s">
     <div class="fade-in-text align-items-end">
 
-    <?php
-      
-      //Query to Get all CAtegories from Database
-      $sql = "SELECT * FROM ll_about";
-
-      //Execute Query
-      $res = mysqli_query($conn, $sql);
-
-      //Count Rows
-      $count = mysqli_num_rows($res);
-
-      //If there are any results, retrieve values
-      if($count>0)
-      {
-         $row=mysqli_fetch_assoc($res);
-         $id = $row['id'];
-         $heading = $row['heading'];
-         $about_text = $row['about'];
-         $image = $row['image'];
-         $image_desc = $row['image_desc'];
-    ?>
-
-        <h2><?php echo $heading; ?></h2>
+  
+        <h2>Under Construction</h2>
           <pre></pre>
-            <p><?php echo $about_text; ?></p>
+            <p>Thanks!</p>
            <pre></pre>
     </div>
 
-    <img <?php echo "src='Images/".$row['image']."'";?> class="center" alt="Owner Pic" width="384" height="306">
+   
 
     <div class="row justify-content-center">
       <div class="col-sm-4 text-center">
         <p></p>
-          <h class = "desc"><?php echo $image_desc; ?></h>
-      
-    <?php
-     }
-    ?>
+          <h class = "desc">:)</h>
+  
     
       </div>
     </div>
@@ -92,7 +93,7 @@ body {
   <br><br><br><br><br>
 
 
-  <?php include('partial/user_footer.html'); ?> <!-- use footer -->
+ 
 
 </body>
 
