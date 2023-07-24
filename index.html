@@ -119,7 +119,48 @@
 </nav>
     
 <p>  </p>
-   <!-- <?php include("partial/navbar.html"); ?> Uses Navigation bar  -->
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- import font awesome icons -->
+<link href= "css/topnav.css" rel="stylesheet"> <!-- import CSS file for top navigation bar -->
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centered">
+    <a href="order_tracker.html" class="active">Order Tracker</a>
+  </div>
+
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="cart.html">
+      <span id="cart-item" class="position-absolute top-50 start-95 translate-middle badge rounded-pill"></span><i class="fa fa-shopping-cart"></i></span></a>
+  </div>
+
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+<script type="text/javascript">
+
+  // Load total # of items added in the cart and display in the top navbar
+  load_cart_item_number();
+
+  function load_cart_item_number() {
+     $.ajax({
+        url: 'action.html',
+        method: 'get',
+        data: {
+          cartItem: "cart_item"
+        },
+        success: function(response) {
+          $("#cart-item").html(response);
+        }
+    });
+ }
+
+  </script>
 
    <!-- Carousel -->
    <div id="food" class="carousel slide" data-bs-ride="carousel">
@@ -134,75 +175,6 @@
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
 
-        <?php
-          
-        // Query to get all home page content         
-        $sql = "SELECT * FROM ll_home";
-
-        $res = mysqli_query($conn, $sql); // Execute          
-
-        $count = mysqli_num_rows($res);
-
-        // If there are results, retrieve them        
-        if($count>0)
-        {
-          while($rows=mysqli_fetch_assoc($res))
-          {
-            //get the values from individual columns
-            $id=$rows['id'];
-            $hours=$rows['hours'];
-            $img_one = $rows['image_one'];
-            $img_two = $rows['image_two'];
-            $img_three = $rows['image_three'];
-        ?>
-
-          <div class="carousel-item active">
-            <?php
-                //Check if there is an Image
-                if($img_one=="")
-                {
-                    //Display Message
-                    echo "<div class='error'>Image not Available</div>";
-                }
-                else
-                {
-                    //Image 
-                    ?>
-                    <img src="Images/<?php echo $img_one; ?>" alt="Food1" class="d-block" style="width:65%;">
-                    <?php
-                }
-            ?>
-          </div>
-
-          <div class="carousel-item">
-            <?php
-                if($img_two=="")
-                {
-                    echo "<div class='error'>Image not Available</div>";
-                }
-                else
-                {
-                    ?>
-                    <img src="Images/<?php echo $img_two; ?>" alt="Food2" class="d-block" style="width:65%;">
-                    <?php
-                }
-
-                ?>
-          </div>
-
-          <div class="carousel-item">
-            <?php
-                if($img_three=="")
-                {
-                    echo "<div class='error'>Image not Available</div>";
-                }
-                else
-                {
-                    ?>
-                    <img src="Images/<?php echo $img_three; ?>" alt="Food3" class="d-block" style="width:65%;">
-                    <?php
-                }
-            ?>
           </div>
         </div>
 
@@ -223,28 +195,14 @@
 
           <h5>HOURS</h5><br>
           <h3>
-            <?php
-
-              echo $hours;
-            ?>
+            
           </h3>
-
-        <?php
-        }
-      }
-
-      else
-      {
-        //Image not Available
-        echo "<div class='error'>Image not Added.</div>";
-      }
-        ?>
 
         </div>
       </div>
     </div>
 
-  <?php include('partial/user_footer.html'); ?> <!-- use footer -->
+  
 
 </body>
 
